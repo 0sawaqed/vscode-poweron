@@ -1,9 +1,8 @@
 {
-    "name": "symitar-poweron",
+    "name": "poweron",
     "displayName": "PowerOn",
-    "description": "Syntax highlighting for Symitar's PowerOn Language",  
-    "icon": "po.png",    
-    "version": "0.0.1",
+    "description": "Syntax highlighting for Symitar's PowerOn Language",   
+    "version": "1.0.0",
     "publisher": "0sawaqed",   
     "author": 
     {
@@ -32,14 +31,14 @@
     ],
     "contributes": {
         "languages": [{
-            "id": "po",
-            "aliases": ["PowerOn", "po"],
-            "extensions": [".PO",".DEF", ".SET", ".PRO", ".SUB"],
+            "id": "poweron",
+            "aliases": ["PowerOn", "po", "poweron"],
+            "extensions": [".PO",".DEF", ".SET", ".PRO", ".SUB",".POWERON"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
-            "language": "po",
-            "scopeName": "source.po",
+            "language": "poweron",
+            "scopeName": "source.poweron",
             "path": "./syntaxes/po.tmLanguage.json"
         }]
     }
