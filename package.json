@@ -1,21 +1,17 @@
 {
     "name": "poweron",
     "displayName": "PowerOn",
-    "description": "Syntax highlighting for Symitar's PowerOn Language",   
-    "version": "1.0.0",
-    "publisher": "0sawaqed",   
-    "author": 
-    {
+    "description": "Syntax highlighting for Symitar's PowerOn Language",
+    "version": "1.0.1",
+    "publisher": "0sawaqed",
+    "author": {
         "name": "Oday Sawaqed",
         "email": "github@osawaqed.com"
-    },  
-    "licenses": 
-    [
-        {
-            "type": "MIT",
-            "url": "https://github.com/0sawaqed/vscode-poweron/blob/master/LICENSE"
-        }
-    ],
+    },
+    "licenses": [{
+        "type": "MIT",
+        "url": "https://github.com/0sawaqed/vscode-poweron/blob/master/LICENSE"
+    }],
     "repository": {
         "type": "git",
         "url": "https://github.com/0sawaqed/vscode-poweron"
@@ -33,13 +29,13 @@
         "languages": [{
             "id": "poweron",
             "aliases": ["PowerOn", "po", "poweron"],
-            "extensions": [".PO",".DEF", ".SET", ".PRO", ".SUB",".POWERON"],
-            "configuration": "./language-configuration.json"
+            "extensions": [".PO", ".DEF", ".SET", ".PRO", ".SUB", ".POWERON"],
+            "configuration": "./poweron.config.json"
         }],
         "grammars": [{
             "language": "poweron",
             "scopeName": "source.poweron",
-            "path": "./syntaxes/po.tmLanguage.json"
+            "path": "./syntaxes/poweron.language.json"
         }]
     }
 }
