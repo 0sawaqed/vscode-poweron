@@ -14,10 +14,11 @@ This extension provides `PowerOn` language support for Visual Studio Code.
 
 Extension | Description
 ---       | ---
-`.PO`       | PowerOn Specfile
-`.DEF`      | Definition Specfile
-`.PRO`      | Procedure Specfile
-`.SUB`      | Sub Procedure Specfile
+`.PO`     | PowerOn Specfile ```.poweron```
+`.DEF`    | Definition Specfile
+`.SET`    | Setup Specfile
+`.PRO`    | Procedures Specfile
+`.SUB`    | Sub Procedures Specfile
 
 
 
