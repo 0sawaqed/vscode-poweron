@@ -6,7 +6,7 @@ This extension provides `PowerOn` language support for Visual Studio Code.
 ## Features:
 
 * Syntax highlighting
-* Code snippets
+* Code snippets (not released yet, WIP)
 
 
 
