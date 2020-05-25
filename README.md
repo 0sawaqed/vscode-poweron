@@ -26,7 +26,7 @@ Extension | Description
 
 * Clone the repo: ```github
 git clone git://github.com/0sawaqed/vscode-poweron.git```.
-* Download from the `Visual Studio Extension Gallery`.
+* Download from the `Visual Studio Marketplace`. [Click Here](https://marketplace.visualstudio.com/items?itemName=0sawaqed.poweron)
 * Install using `Visual Studio Extension Manager`:
   - Press `F1` and typing extension
   - Pick `Extensions: Install Extension`
