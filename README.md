@@ -25,7 +25,7 @@ Extension | Description
 ##### Select one of the following:
 
 * Clone the repo: ```github
-git clone git://github.com/osawaqed/vscode-poweron.git```.
+git clone git://github.com/0sawaqed/vscode-poweron.git```.
 * Download from the `Visual Studio Extension Gallery`.
 * Install using `Visual Studio Extension Manager`:
   - Press `F1` and typing extension
@@ -36,4 +36,4 @@ git clone git://github.com/osawaqed/vscode-poweron.git```.
 
 ## License:
 
-* [MIT](https://github.com/osawaqed/vscode-poweron/blob/master/LICENSE)
+* [MIT](https://github.com/0sawaqed/vscode-poweron/blob/master/LICENSE)
