@@ -2,8 +2,9 @@
     "name": "poweron",
     "displayName": "PowerOn",
     "description": "Syntax highlighting for Symitar's PowerOn Language",
-    "version": "1.0.1",
+    "version": "1.0.4",
     "publisher": "0sawaqed",
+    "icon": "poweron.ico",
     "author": {
         "name": "Oday Sawaqed",
         "email": "github@osawaqed.com"
