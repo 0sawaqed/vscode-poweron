@@ -35,3 +35,8 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [1.0.8]
 
 - Optimized code
+
+
+## [1.0.9]
+
+- Optimized code & removed schema 
