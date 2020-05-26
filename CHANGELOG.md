@@ -19,3 +19,15 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [1.0.3]
 
 - Added package icon
+
+## [1.0.4]
+
+- Added support for missing keywords
+
+## [1.0.5]
+
+- Added support for divisions [`DEFINE`, `LETTER`, `PRINT`, `SELECT`, `SETUP`, `SORT`, `TARGET`, `TOTAL`]
+
+## [1.0.6]
+
+- Added support for control keywords [`NOT`, `WITH`, `ANY`, `THEN`, `DO`, `END`]
