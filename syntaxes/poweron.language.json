@@ -1,7 +1,8 @@
 {
     "$schema": "https://raw.githubusercontent.com/0sawaqed/vscode-poweron/master/syntaxes/poweron.schema.json",
     "name": "PowerOn",
-    "patterns": [{
+    "patterns": [
+        {
             "include": "#dataType"
         },
         {
@@ -22,7 +23,8 @@
     ],
     "repository": {
         "variables": {
-            "patterns": [{
+            "patterns": [
+                {
                     "include": "#variable"
                 },
                 {
@@ -31,7 +33,8 @@
             ]
         },
         "dataType": {
-            "patterns": [{
+            "patterns": [
+                {
                     "include": "#validDate"
                 },
                 {
@@ -49,15 +52,23 @@
             ]
         },
         "keywords": {
-            "patterns": [{
+            "patterns": [
+                {
                     "name": "keyword.control.poweron",
-                    "match": "(?i)\\b(if|else|while|for|return)\\b"
+                    "match": "(?i)\b(IF|ELSE|WHILE|FOR|FOR EACH)\b"
+                },
+                {
+                    "name": "keyword.control.poweron",
+                    "match": "(?i)\b(NOT|WITH|ANY|THEN|DO|END)\b"
                 },
                 {
                     "include": "#keyword"
                 },
                 {
                     "include": "#SpecialFileMaintenanceKeywords"
+                },
+                {
+                    "include": "#SpecialPowerOnDivisions"
                 },
                 {
                     "include": "#SpecialPowerOnLiterals"
@@ -68,43 +79,62 @@
             ]
         },
         "keyword": {
-            "patterns": [{
-                "name": "keyword.control.poweron",
-                "match": "(?i)[\\s]*(ACROSS|AFTERLAST|ALL|APPEND|BEFOREFIRST|BELL|BLINK|BLOCKSIZE|BRIGHT|CALL|CHANGE|CLEARSERVICE|CLEARWARNING|CREATE|DATAFILE|DELETE|DIALOGCLOSE|DIALOGDISPLAY|DIALOGENDGROUPBOX|DIALOGENDGROUPING|DIALOGINTROTEXT|DIALOGNEWCOLUMN|DIALOGPROMPTCOMBOEND|DIALOGPROMPTLISTEND|DIALOGSTARTGROUPING|DIALOGTEXTLISTEND|DIVPROJECTCALC|ENTERDELIMITER|ENTERLINE|EVERY #|FORACCOUNT|FORMLENGTH|#INCLUDE|LABELS|LASTACCOUNT|LASTCREATE|LASTSEQUENCE|LEFT|LNInsFromSh|LOANPROJECTCALC|LOC|MICRACCOUNTNUMBER|MODIFY|NEWLINE|NEWPAGE|NEXTULI|NONANSISTANDARD|NONE|OVERDRAWAVAILABLECALC|OVERDRAWAVAILABLEINIT|PREFIX|PRINTCONTROL|PROCEDURE|END|TARGET|DEFINE|SETUP|SELECT|PRINT|SORT||READ|READWRITE|RECORDSIZE|REPORTCATEGORY|REVISE|RIGHT|SAVEMODE|SET|SETSERVICE|SETWARNING|STARTING|SUBTOTAL|SUPPRESS|TARGETFILE|TERMINATE|UNTIL|VIN|WINMESSAGESEND|WINMODETEXT|WINMODEWINDOWS|WRAP|WRITE|THEN|DO)[\\s]+"
-            }]
+            "patterns": [
+                {
+                    "name": "keyword.control.poweron",
+                    "match": "(?i)[\\s]*(#INCLUDE|ABS|ACROSS|ALL|ANYSERVICE|ANYWARNING|BELL|BLINK|BRIGHT|CALL|CAPITALIZE|CHARACTERREAD|CHARACTERSEARCH|CHRVALUE|CODEREAD|COL|CTRLCHR|DATAFILE|DATASIZE|DATEOFFSET|DATEREAD|DATEVALUE|DAY|DAYOFWEEK|DEFINE|DIALOGCLOSE|DIALOGDISPLAY|DIALOGENDGROUPBOX|DIALOGENDGROUPING|DIALOGINTROTEXT|DIALOGNEWCOLUMN|DIALOGPROMPTCHAR|DIALOGPROMPTCODE|DIALOGPROMPTCOMBOEND|DIALOGPROMPTCOMBOOPTION|DIALOGPROMPTCOMBOSTART|DIALOGPROMPTDATE|DIALOGPROMPTLISTEND|DIALOGPROMPTLISTOPTION|DIALOGPROMPTLISTSTART|DIALOGPROMPTMONEY|DIALOGPROMPTNUMBER|DIALOGPROMPTPASSWORD|DIALOGPROMPTRATE|DIALOGPROMPTYESNO|DIALOGSTART|DIALOGSTARTGROUPBOX|DIALOGSTARTGROUPING|DIALOGTEXTLISTEND|DIALOGTEXTLISTOPTION|DIALOGTEXTLISTSTART|DIM|DIVPROJECTCALC|DIVPROJECTINIT|EMAILLINE|EMAILSEND|EMAILSTART|ENTERCHARACTER|ENTERCODE|ENTERDATE|ENTERDELIMITER|ENTERLINE|ENTERMONEY|ENTERNUMBER|ENTERRATE|ENTERYESNO|EVERY #|EXECUTE|EXP|FILEARCHIVEADD|FILEARCHIVEEXTRACT|FILECLOSE|FILECREATE|FILEDECRYPT|FILEDELETE|FILEENCRYPT|FILEGETPOS|FILELISTCLOSE|FILELISTOPEN|FILELISTREAD|FILEOPEN|FILEREAD|FILEREADLINE|FILESETPOS|FILEWRITE|FILEWRITELINE|FLOATVALUE|FLOOR|FMPERFORM|FOR|FORMAT|FORMLENGTH|FTPCLOSE|FTPCMD|FTPGET|FTPLOGIN|FTPOPEN|FTPPUT|FULLYEAR|GETDATACHAR|GETDATADATE|GETDATAMONEY|GETDATANUMBER|GETDATARATE|GETFIELDDATAMAX|GETFIELDDATATYPE|GETFIELDHELPFILE|GETFIELDMNEMONIC|GETFIELDNAME|GETFIELDNUMBER|HEADER|HEADERS|HOUR|HPBOXDRAW|HPESC|HPFONT|HPLINEDRAW|HPLINESPERINCH|HPRESET|HPSETUP|HPUNDERLINE|HPXPOS|HPYPOS|HTMLVIEWDISPLAY|HTMLVIEWLINE|HTMLVIEWOPEN|INITCREDITREPORT|INITSUBROUTINE|INT|LABELS|LEFT|LENGTH|LETTER|LIVEINSTCHECK|LOANPROJECTCALC|LOANPROJECTINIT|LOG|LOWERCASE|MINUTE|MOD|MONEYREAD|MONTH|NEWLINE|NEWPAGE|NONANSISTANDARD|NONE|NUMBERREAD|OUTPUTCLOSE|OUTPUTOPEN|OUTPUTSWITCH|OVERDRAWAVAILABLECALC|OVERDRAWAVAILABLEINIT|POPUPMESSAGE|PRINT|PRINTCONTROL|PROCEDURE|PULLCREDITREPORT|PWR|RATEREAD|REPEATCHR|REPORTCATEGORY|RIGHT|SCREENXYPOS|SEGMENT|SELECT|SETUP|SORT|STARTING|STOPBLINK|SUBTOTAL|SUPPRESS|SUPPRESSNEWLINE|TARGET|TERMINATE|TITLE|TOTAL|TRAILERS|TRANPERFORM|UNTIL|UPPERCASE|VALUE|WHILELIMIT|WIDTH|WINDDECONNECT|WINDDEDISCONNECT|WINDDEEXECUTE|WINDDEPOKEDATA|WINDOWSSEND|WINMESSAGEFIELD|WINMESSAGESEND|WINMESSAGESTART|WINMODETEXT|WINMODEWINDOWS|YEAR|YESNOPROMPT|YESNOREAD)[\\s]+"
+                }
+            ]
         },
         "SpecialFileMaintenanceKeywords": {
-            "patterns": [{
-                "name": "support.function.poweron",
-                "match": "(?i)[\\s]*(AFTERLAST|BEFOREFIRST|CLEARSERVICE|CLEARWARNING|CHANGE|CREATE|DELETE|LASTACCOUNT|LASTCREATE|LOC|MODIFY|NEXT|NEXTACCOUNT|NEXTCARD|NEXTCHECK|NEXTCOLLATERAL|NEXTCTR|NEXTDOCUMENT|NEXTMBRADDRESS|NEXTSEQUENCE|PREFIX|REVISE|SET|SETSERVICE|SETWARNING)[\\s]+"
-            }]
+            "patterns": [
+                {
+                    "name": "support.function.poweron",
+                    "match": "(?i)[\\s]*(ACCESS|ACCOUNTCHANGE|AFTERLAST|APPEND|ASCII|AUDIO|BEFOREFIRST|BLOCKSIZE|CARDCREATIONWIZARD|CERTIFICATE|CHANGE|CHECKDISBURSEDWIZARD|CHECKORDER|CLEARSERVICE|CLEARWARNING|COLLECTION|COPYAPP|CREATE|CREATEFINANCEFROMCREDREP|CUSTOMFORMS|CUSTOMFORMSWINDOWS|DELETE|EBCDIC|ESCROW|ESCROWANALYSIS|HOLD|INSERT|LANDSCAPE|LASTACCOUNT|LASTCREATE|LNSEGMENT|LOC|MCW|MCWINTERACTIVE|MD5HASH|MICRACCOUNTNUMBER|MODIFY|NEXT|NEXTACCOUNT|NEXTCARD|NEXTCHECK|NEXTCOLLATERAL|NEXTCTR|NEXTDOCUMENT|NEXTMBRADDRESS|OFACDETAILS|PASSWORDHASH|PORTRAIT|PREFIX|QUEUECREDITREPORT|READ|READWRITE|RECORDSIZE|REMOVE|REVISE|REVLANDSCAPE|REVPORTRAIT|SAVEMODE|SCHEDULE|SET|SETSERVICE|SETWARNING|STATELESS|SUBROUTINE|SYMCONNECT|TARGETFILE|TRANSACTION|TRANSFER|UNIQUEKEY|VALIDATEFIELDSET|VALIDATION|VIN|WINDOWS|WINDOWSPRINT|WRAP|WRITE)[\\s]+"
+                }
+            ]
+        },
+        "SpecialPowerOnDivisions": {
+            "patterns": [
+                {
+                    "name": "support.function.poweron",
+                    "match": "(?i)[\\s]*(DEFINE|LETTER|PRINT|SELECT|SETUP|SORT|TARGET|TOTAL)[\\s]+"
+                }
+            ]
         },
         "SpecialPowerOnLiterals": {
-            "patterns": [{
-                "name": "support.type.poweron",
-                "match": "(?i)[\\s]*(LIVEINSTCHECK|PREVSYSTEMDATE|SYSACTUALDATE|SYSACTUALTIME|SYSCLIENTNUMBER|SYSCONSOLENUM|SYSHOSTNAME|SYSMEMOMODE|SYSSYMDIRECTORY|SYSTEMDATE|SYSUSERNUMBER|SYSWINDOWSLEVEL)[\\s]+"
-            }]
+            "patterns": [
+                {
+                    "name": "support.type.poweron",
+                    "match": "(?i)[\\s]*(LIVEINSTCHECK|PREVSYSTEMDATE|SYSACTUALDATE|SYSACTUALTIME|SYSCLIENTNUMBER|SYSCONSOLENUM|SYSHOSTNAME|SYSMEMOMODE|SYSSYMDIRECTORY|SYSTEMDATE|SYSUSERNUMBER|SYSWINDOWSLEVEL)[\\s]+"
+                }
+            ]
         },
         "SpecialPowerOnKeywords": {
-            "patterns": [{
-                "name": "support.class.poweron",
-                "match": "(?i)[\\s]*(ACCOUNTCHANGE|ACS|ATMDIALOG|AUDIO|BATCH|CARDCREATIONWIZARD|CERTIFICATE|CHECKDISBURSEDWIZARD|COLLECTION|CUSTOMFORMS|CUSTOMFORMSWINDOWS|DEMAND|EXCPITEM|HOMEBANKING|MCW|MCWINTERACTIVE|STATELESS|SUBROUTINE|SYMCONNECT|VALIDATION|WINDOWS|WINDOWSPRINT|TITLE|HEADER|HEADERS)[\\s]+"
-            }]
+            "patterns": [
+                {
+                    "name": "support.class.poweron",
+                    "match": "(?i)[\\s]*(ACCOUNT|ACHADDENDA|ACHADDINFO|ACHEDIT|ACHITEM|ACTIVITY|AGREEMENT|AGREEMENT TRANSACTION|ATMDIALOG|BILL|CARD|CASHLETTER|CASHORDER|CDMDIALOG|CHECK|COLLATERAL|COLLATERAL COLLHOLD|COLLATERAL DOCUMENT|CORPTRANSFER|CPWORKCARD|CREDREP|CREDREP ITEM|CTR|CTRACCOUNT|CTRPERSON|COMMENT|DEALER|EFT|EFT ADDENDAINFO|EXCPADDENDA|EXCPADDINFO|EXCPITEM|EXTERNALACCOUNT|GLACCOUNT|GLENTRY|GLHISTORY|GLSUBACCOUNT|GLTRAN|HOUSEHOLD|INVENTORY|INVOICE|IRS|IRS DISTRIBUTION|IRA|LOAN|LOAN BANKRUPTCY|LOANAPP|LOANAPP FINANCE|LOANAPP PERSON|LOOKUP|MBRADDRESS|MEMBERREC|NAME|NONACCTNAME|NOTE|PARTICIPANT|PARTICIPANT TRANSACTION|PARTICIPATION|PARTICIPATIONLOAN|POOL|PAYEE|PAYROLL|PLEDGE|PORTFOLIO|PREFERENCE|REMITTANCE|RESERVEPLAN|RESERVEPLAN LOAN|RESERVEPLAN TRANSACTION|SHARE|SHARE ANALYSIS|SHARE ANALYSISGROUP|SHARE ANALYSISPLAN|SAVINGS|SITE|SITE CASHORDERTYPE|TRACKING|USER|VENDOR|WESTERNUNION|WIRE|WIRE BENEFICIARYADV|WIRE BENEFICIARYFIADV|WIRE BENEFICIARYFIINFO|WIRE BENEFICIARYINFO|WIRE DRAWDOWNDEBITACCTADV|WIRE FITOFIINFO|WIRE INTERMEDFIADV|WIRE INTERMEDFIINFO|WIRE RECEIVERFIINFO|WIRE SERVICEMESSAGE|WIRE USCAUDITINFO|WORKLISTEDIT|WORKLISTEDIT WORKLISTFIELD)[\\s]+"
+                }
+            ]
         },
         "character": {
             "name": "string.quoted.double.poweron",
             "begin": "\"",
             "end": "\"",
-            "patterns": [{
-                "name": "constant.character.escape.poweron",
-                "match": "\\\\."
-            }]
+            "patterns": [
+                {
+                    "name": "constant.character.escape.poweron",
+                    "match": "\\\\."
+                }
+            ]
         },
         "comment": {
             "name": "comment.block.poweron",
             "begin": "\\[",
             "end": "]",
-            "patterns": [{
+            "patterns": [
+                {
                     "include": "#comment"
                 },
                 {
@@ -114,7 +144,8 @@
             ]
         },
         "types": {
-            "patterns": [{
+            "patterns": [
+                {
                     "include": "#typesExtended"
                 },
                 {
@@ -124,13 +155,16 @@
             ]
         },
         "typesExtended": {
-            "patterns": [{
-                "name": "storage.modifier.poweron",
-                "match": "(?i)(ARRAY)"
-            }]
+            "patterns": [
+                {
+                    "name": "storage.modifier.poweron",
+                    "match": "(?i)(ARRAY)"
+                }
+            ]
         },
         "operator": {
-            "patterns": [{
+            "patterns": [
+                {
                     "include": "#equalOperator"
                 },
                 {
@@ -140,46 +174,60 @@
             ]
         },
         "equalOperator": {
-            "patterns": [{
-                "name": "support.function.thing.poweron",
-                "match": "="
-            }]
+            "patterns": [
+                {
+                    "name": "support.function.thing.poweron",
+                    "match": "="
+                }
+            ]
         },
         "variable": {
-            "patterns": [{
-                "name": "variable.object.property.poweron",
-                "match": "([A-Za-z]+)"
-            }]
+            "patterns": [
+                {
+                    "name": "variable.object.property.poweron",
+                    "match": "([A-Za-z]+)"
+                }
+            ]
         },
         "specfileVariable": {
-            "patterns": [{
-                "name": "variable.object.property.poweron",
-                "match": "(@[A-Za-z]+)"
-            }]
+            "patterns": [
+                {
+                    "name": "variable.object.property.poweron",
+                    "match": "(@[A-Za-z]+)"
+                }
+            ]
         },
         "validDate": {
-            "patterns": [{
-                "name": "constant.date.dataType.poweron",
-                "match": "'([0-9\\-]{2}\/[0-9\\-]{2}\/(([0-9\\-]{2})|([0-9]{4})))'"
-            }]
+            "patterns": [
+                {
+                    "name": "constant.date.dataType.poweron",
+                    "match": "'([0-9\\-]{2}\\/[0-9\\-]{2}\\/(([0-9\\-]{2})|([0-9]{4})))'"
+                }
+            ]
         },
         "invalidDate": {
-            "patterns": [{
-                "name": "constant.date.invalid.dataType.poweron",
-                "match": "'.*'"
-            }]
+            "patterns": [
+                {
+                    "name": "constant.date.invalid.dataType.poweron",
+                    "match": "'.*'"
+                }
+            ]
         },
         "validNumber": {
-            "patterns": [{
-                "name": "constant.numeric.dataType.poweron",
-                "match": "[0-9]+"
-            }]
+            "patterns": [
+                {
+                    "name": "constant.numeric.dataType.poweron",
+                    "match": "[0-9]+"
+                }
+            ]
         },
         "invalidNumber": {
-            "patterns": [{
-                "name": "constant.numeric.invalid.dataType.poweron",
-                "match": "[0-9]+[^0-9]+.*"
-            }]
+            "patterns": [
+                {
+                    "name": "constant.numeric.invalid.dataType.poweron",
+                    "match": "[0-9]+[^0-9]+.*"
+                }
+            ]
         }
     },
     "scopeName": "source.poweron"
