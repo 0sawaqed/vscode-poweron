@@ -28,6 +28,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Added support for divisions [`DEFINE`, `LETTER`, `PRINT`, `SELECT`, `SETUP`, `SORT`, `TARGET`, `TOTAL`]
 
-## [1.0.6]
+## [1.0.7]
 
 - Added support for control keywords [`NOT`, `WITH`, `ANY`, `THEN`, `DO`, `END`]
+
+## [1.0.8]
+
+- Optimized code
