@@ -2,7 +2,7 @@
     "name": "poweron",
     "displayName": "PowerOn",
     "description": "Syntax highlighting for Symitar's PowerOn Language",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "publisher": "0sawaqed",
     "icon": "poweron.ico",
     "author": {
@@ -29,7 +29,7 @@
     "contributes": {
         "languages": [{
             "id": "poweron",
-            "aliases": ["PowerOn", "po", "poweron"],
+            "aliases": ["PowerOn", "po", "poweron", "symitar", "repgen", "episys"],
             "extensions": [".PO", ".DEF", ".SET", ".PRO", ".SUB", ".POWERON"],
             "configuration": "./poweron.config.json"
         }],
@@ -37,6 +37,6 @@
             "language": "poweron",
             "scopeName": "source.poweron",
             "path": "./syntaxes/poweron.language.json"
-        }]
+        }]     
     }
 }
