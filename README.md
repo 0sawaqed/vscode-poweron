@@ -4,9 +4,9 @@ This extension provides `PowerOn` language support for Visual Studio Code.
 
 ## Features:
 
-* Syntax highlighting
+* Syntax highlighting.
+* Add support for a new extensions. [#1](https://github.com/0sawaqed/vscode-poweron/issues/1) 
 * Code snippets (WIP, not released yet)
-
 
 
 ## Supported Extensions:
