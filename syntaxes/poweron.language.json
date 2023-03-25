@@ -114,13 +114,7 @@
         "character": {
             "name": "string.quoted.double.poweron",
             "begin": "\"",
-            "end": "\"",
-            "patterns": [
-                {
-                    "name": "constant.character.escape.poweron",
-                    "match": "\\\\."
-                }
-            ]
+            "end": "\""
         },
         "comment": {
             "name": "comment.block.poweron",
